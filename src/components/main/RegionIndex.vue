@@ -1,5 +1,5 @@
 <template>
-        <div class="level flex ">
+        <div class="level flex flex-wrap">
                 地区: 
                 <div @click="changeRegion(-1, 0)" class="ml-4 hover-color-lightblue:hover" :class="{'c-lightblue': -1 == store.region }" >
                     全部

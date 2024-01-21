@@ -1,10 +1,10 @@
 <template>
 <div>
     <div class="flex flex-wrap w-full">
-    <div v-for="item in store.items" :id="item.id" class="pa-2">
-        <ACard>
-            <template #default>
-                <div class=" w-sm">
+        <div v-for="item in store.items" :id="item.id" class="pa-2">
+            <ACard>
+                <template #default>
+                    <div class=" w-sm">
                         <div class="a-title center">
                             <span>{{ item.hosname }}</span>
                         </div>
@@ -14,7 +14,7 @@
                                 {{ item.param.hostypeString }}
                             </span>
                             <!-- <span class="i-mdi-light:thumb-up">
-                                
+
                             </span> -->
                             <span>
                                 <i class="i-mdi-light:alarm"></i>
@@ -22,23 +22,23 @@
                             </span>
                             <!-- <span >
                             </span> -->
+                        </div>
+                        <img src="" alt="" srcset="">
                     </div>
-                    <img src="" alt="" srcset="">
-                </div>
-            </template>
-        </ACard>
-    </div>
+                </template>
+            </ACard>
+        </div>
 
-</div>
-<div class="flex justify-between">
+    </div>
+    <div class="flex justify-between">
         <!-- pagination -->
         <div>
-            <span>1 - 5 of 10</span>
+            <span>1 - 5 of 10</span>    
         </div>
         <div>
-            <span >per page <ABtn class="m3">10 <AMenu>
-                <AList class="" :items="page.pageSizeList" v-model="page.page_size"></AList>
-            </AMenu>
+            <span>per page <ABtn class="m3">10 <AMenu>
+                        <AList class="" :items="page.pageSizeList" v-model="page.page_size"></AList>
+                    </AMenu>
                 </ABtn></span>
             <span class="m3">
                 <div class="i-mdi-light:arrow-left hover-color-amber:hover" @click="pageMinus"></div>
@@ -54,6 +54,8 @@ import { onMounted, ref } from 'vue'
 import { mainStoreService } from '@/store/main/mainStore'
 const store = mainStoreService()
 
+
+
 function pageMinus() {
     page.value.page_num = page.value.page_num - 1
 
@@ -63,17 +65,17 @@ function pageMinus() {
 function pageAdd() {
     // console.log(page.value.page_num);
     console.log(page.value.page_num);
-    
+
     // if (page.value.page_num < page.value.totalPages) {
-        page.value.page_num = page.value.page_num + 1
-        console.log(page.value.page_num);
-        
+    page.value.page_num = page.value.page_num + 1
+    console.log(page.value.page_num);
+
     // } else { 
     //     page.value.page_num = 1
     // }
     // page.value.page_num < page.value.totalPages ? page.value.page_num++ : page.value.page_num
     console.log(page.value.page_num);
-    
+
     getPage()
 }
 const page = ref({

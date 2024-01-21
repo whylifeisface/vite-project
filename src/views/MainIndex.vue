@@ -15,20 +15,73 @@
 
     </div>
 
-    <section class="left">
+    <main class="main">
+
+        <div class="center">
+
+            <CarouselIndx></CarouselIndx>
+            <SearchIndex></SearchIndex>
+            <div class=" flex ">
+                <div class="left w50">
+                <section class="left h-full">
+                        <LeftIndex></LeftIndex>
+                    <!-- <div class=" flex flex-col">
+                        <div class="h8 w20 hover-bg-blue">医院信息</div>
+                        <div class="h8 w20 hover-bg-blue">预约挂号</div>
+                        <div class="h8 w20 hover-bg-blue">医院详情</div>
+                        <div class="h8 w20 hover-bg-blue">预约通知</div>
+                        <div class="h8 w20 hover-bg-blue">停诊信息</div>
+                        <div class="h8 w20 hover-bg-blue">查询取消</div>
+                        "医院信息", "预约挂号", "医院详情", "预约通知", "停诊信息", "查询取消
+                    </div> -->
+                </section>
+            </div>
+                <div class="w280">
+                    <LevelIndex></LevelIndex>
+                    <regionIndex></regionIndex>
+                    <TwoIndex></TwoIndex>
+                </div>
+
+                <div class="w50 mt-10">
+                    <div>
+                        <!-- <div class="flex justify-between">
+                            <span><i class=""></i> 常见科室</span>
+                            <span>全部 <i class=""></i> </span>
+                        </div>
+                        <div class="flex flex-wrap">
+                            <span class="p1" v-for="(item, index) in values" :key="index">{{ item.title }}</span>
+                        </div>
+                        <div></div> -->
+                        <title-index title="常见科室">
+                            <template #content>
+                                <div class="flex flex-wrap">
+                                    <span class="p1" v-for="(item, index) in values" :key="index">{{ item.title }}</span>
+                                </div>  
+                            </template>
+                        </title-index>
+                        <title-index title="平台公告">
+                            <template #content>
+                                <div class="flex flex-wrap">
+                                    <span class="p1" v-for="(item, index) in newList" :key="index">{{ item.news }}</span>
+                                </div>  
+                            </template>
+                        </title-index>
+                    </div>
+
+                    <div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+
+        </div>
+        <!-- <router-view></router-view> -->
+    </main>
+    <section class="right">
 
     </section>
-
-    <main class="main">
-        <CarouselIndx></CarouselIndx>
-        <SearchIndex></SearchIndex>
-        <LevelIndex></LevelIndex>
-        <regionIndex></regionIndex>
-        <TwoIndex></TwoIndex>
-        
-        <!-- <router-view></router-view> -->
-
-    </main>
 
     <div class="bottom">
 
@@ -65,18 +118,35 @@ import CarouselIndx from '@/components/main/carouselIndx.vue';
 import LevelIndex from '@/components/main/LevelIndex.vue';
 import regionIndex from '@/components/main/RegionIndex.vue';
 import TwoIndex from '@/components/main/TwoIndex.vue';
+import titleIndex from '@/components/main/TitleIndex.vue';
+
+import { ref } from 'vue'
+import LeftIndex from '@/components/main/leftIndex.vue';
+
+const values = ref([
+    { title: '内科', id: 1 },
+    { title: '神经内科', id: 2 },
+    { title: '妇科', id: 3 },
+    { title: '儿科', id: 4 },
+    { title: '消化内科', id: 5 },
+    { title: '呼吸内科', id: 6 },
+    { title: '耳鼻咽喉科', id: 8 },
+])
+
+const newList = ref([
+    { news: '关于延长北京大学', id: 1},
+    { news: '关于延长北京大学', id: 1},
+    { news: '关于延长北京大学', id: 1},
 
 
-
-
+])
 </script>
 
 <style scoped>
-
 .main_title {
     display: flex;
     justify-content: space-between;
-    width: 1200px;
+    width: 1000px;
     height: 70px;
 }
 
@@ -92,6 +162,8 @@ import TwoIndex from '@/components/main/TwoIndex.vue';
     .left {}
 
     .right {
+        width: 200PX;
+
         .item {
             margin-right: 10px;
         }
