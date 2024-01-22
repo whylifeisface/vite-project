@@ -14,7 +14,7 @@
         </div>
 
     </div>
-
+    <router-view></router-view>
     <main class="main">
 
         <div class="center">
@@ -25,15 +25,7 @@
                 <div class="left w50">
                 <section class="left h-full">
                         <LeftIndex></LeftIndex>
-                    <!-- <div class=" flex flex-col">
-                        <div class="h8 w20 hover-bg-blue">医院信息</div>
-                        <div class="h8 w20 hover-bg-blue">预约挂号</div>
-                        <div class="h8 w20 hover-bg-blue">医院详情</div>
-                        <div class="h8 w20 hover-bg-blue">预约通知</div>
-                        <div class="h8 w20 hover-bg-blue">停诊信息</div>
-                        <div class="h8 w20 hover-bg-blue">查询取消</div>
-                        "医院信息", "预约挂号", "医院详情", "预约通知", "停诊信息", "查询取消
-                    </div> -->
+
                 </section>
             </div>
                 <div class="w280">

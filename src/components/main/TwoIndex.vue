@@ -2,7 +2,7 @@
 <div>
     <div class="flex flex-wrap w-full">
         <div v-for="item in store.items" :id="item.id" class="pa-2">
-            <ACard>
+            <ACard @click="router.push("/hospital/registration?code=" + item.hoscode)">
                 <template #default>
                     <div class=" w-sm">
                         <div class="a-title center">
@@ -52,6 +52,7 @@
 <script lang="ts" setup>
 import { onMounted, ref } from 'vue'
 import { mainStoreService } from '@/store/main/mainStore'
+import { router } from '@/router/router';
 const store = mainStoreService()
 
 
